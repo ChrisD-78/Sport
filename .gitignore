@@ -10,9 +10,9 @@ venv/
 dist/
 build/
 
-# Extracted content
-pdf_content/
-pptx_content/
+# Extracted content - now included
+# pdf_content/
+# pptx_content/
 
 # Temporary files
 *.log
