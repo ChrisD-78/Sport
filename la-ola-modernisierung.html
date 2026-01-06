@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modernisierung Freizeitbad LA OLA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .presentation {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            margin: 20px 0;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            page-break-after: always;
+        }
+
+        .slide-title {
+            background: linear-gradient(135deg, #0066cc, #004999);
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #0066cc;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #0066cc;
+            padding-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 1.8em;
+            color: #004999;
+            margin: 25px 0 15px 0;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: rgba(255,255,255,0.9);
+            margin-top: 10px;
+        }
+
+        .title-logo {
+            margin-top: 30px;
+            margin-bottom: 55px;
+            text-align: center;
+        }
+
+        .title-logo img {
+            max-height: 120px;
+            width: auto;
+            display: inline-block;
+        }
+
+        .hero-card {
+            margin-top: 40px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 16px;
+            padding: 24px 36px;
+            box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+            border: 1px solid rgba(255,255,255,0.35);
+        }
+
+        .hero-card-text {
+            font-size: 2.8em;
+            font-weight: bold;
+            line-height: 1.4;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            letter-spacing: 1px;
+        }
+
+        .logo-container {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .city-logo {
+            font-size: 2em;
+            color: white;
+            background: rgba(255,255,255,0.2);
+            padding: 20px 40px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            width: 100%;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            font-size: 3.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .stat-label {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .importance-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .importance-list li {
+            background: #f0f7ff;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #0066cc;
+            border-radius: 5px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .priority-badge {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+            color: white;
+            padding: 30px 50px;
+            border-radius: 15px;
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255,107,107,0.4);
+            margin: 40px 0;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #e0f2ff 0%, #b3d9ff 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 0;
+            border: 3px dashed #0066cc;
+            color: #0066cc;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .pdf-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            object-fit: contain;
+        }
+
+        .pdf-image-small {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            object-fit: contain;
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 400px;
+            margin: 30px 0;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .action-steps {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .action-steps ol {
+            margin-left: 20px;
+            font-size: 1.2em;
+            line-height: 2;
+        }
+
+        .action-steps li {
+            margin: 15px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .benefit-box {
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .benefit-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .pptx-integrated {
+            background: white;
+        }
+
+        .pptx-content {
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .pptx-text-list {
+            list-style: none;
+            margin: 20px 0;
+            padding: 0;
+        }
+
+        .pptx-text-list li {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #0066cc;
+            border-radius: 5px;
+            font-size: 1.1em;
+            line-height: 1.8;
+            white-space: pre-line;
+        }
+
+        .pptx-content h3 {
+            font-size: 1.8em;
+            color: #004999;
+            margin: 25px 0 15px 0;
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 10px;
+        }
+
+        @media print {
+            .slide {
+                margin: 0;
+                border-radius: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            h2 {
+                font-size: 2em;
+            }
+            
+            .grid-2col {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation">
+        <!-- Titelfolie -->
+        <div class="slide slide-title">
+            <div class="title-logo">
+                <img src="la-ola-logo.jpeg" alt="LA OLA Logo">
+            </div>
+            <h1>🏊 Modernisierung Freizeitbad LA OLA</h1>
+            <div class="hero-card">
+                <p class="hero-card-text">
+                    Für unsere Stadt. Für unsere Bürger.
+                </p>
+            </div>
+        </div>
+
+        <!-- Folie 2: Schlüsselzahlen -->
+        <div class="slide">
+            <h2>📊 Das LA OLA in Zahlen</h2>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number">240.000</div>
+                    <div class="stat-label">Besucher pro Jahr</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">30.000</div>
+                    <div class="stat-label">Schüler im Sportunterricht</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">30.000</div>
+                    <div class="stat-label">Vereinsmitglieder</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Folie 5: Bedeutung für die Bildung -->
+        <div class="slide">
+            <h2>🎓 Bildungsauftrag</h2>
+            
+            <div class="content-section">
+                <h3>30.000 Schüler jährlich</h3>
+                <ul class="importance-list">
+                    <li>Schwimmunterricht für alle Schulen</li>
+                    <li>Sicherung der Schwimmfähigkeit</li>
+                    <li>Erfüllung des Bildungsauftrags</li>
+                    <li>Prävention von Badeunfällen</li>
+                    <li>Nutzung durch die Uni Landau im Rahmen der Sportlehrerausbildung</li>
+                </ul>
+            </div>
+
+            <div class="benefit-box">
+                <div class="benefit-title">🏅 Ohne LA OLA:</div>
+                Kein regulärer Schwimmunterricht für Landauer Schülerinnen und Schüler möglich
+            </div>
+        </div>
+
+        <!-- Folie 6: Bedeutung für den Sport -->
+        <div class="slide">
+            <h2>⚽ Vereinssport</h2>
+            
+            <div class="content-section">
+                <h3>30.000 Vereinsmitglieder</h3>
+                <ul class="importance-list">
+                    <li>Schwimmsport</li>
+                    <li>Kinderschwimmunterricht</li>
+                    <li>Rettungsschwimmerausbild</li>
+                    <li>Reha-Sport</li>
+                    <li>Wasserrettungsorganisation</li>
+                </ul>
+            </div>
+
+            <div class="benefit-box">
+                <div class="benefit-title">🏆 Leistung:</div>
+                Das LA OLA ist die Heimat für Breiten- und Leistungssport in der Region
+            </div>
+        </div>
+
+        <!-- Folie 7: Gesellschaftliche Bedeutung -->
+        <div class="slide">
+            <h2>🏘️ Gesellschaftliche Bedeutung</h2>
+            
+            <div class="content-section">
+                <h3>240.000 Besucher jährlich</h3>
+                <p style="font-size: 1.2em; line-height: 1.8; margin: 20px 0;">
+                    Das Freizeitbad LA OLA ist eine der meistgenutzten öffentlichen Einrichtungen der Stadt Landau.
+                </p>
+            </div>
+
+            <div class="grid-2col" style="margin-top: 40px;">
+                <div class="benefit-box">
+                    <div class="benefit-title">👨‍👩‍👧‍👦 Familien</div>
+                    Freizeitgestaltung und Erholung für alle Generationen
+                </div>
+                <div class="benefit-box">
+                    <div class="benefit-title">💪 Gesundheit</div>
+                    Förderung von Bewegung und Prävention
+                </div>
+            </div>
+
+            <div class="grid-2col">
+                <div class="benefit-box">
+                    <div class="benefit-title">🏙️ Lebensqualität</div>
+                    Attraktivität Landaus als Wohnort
+                </div>
+                <div class="benefit-box">
+                    <div class="benefit-title">💼 Wirtschaft</div>
+                    Positive Effekte auf lokale Unternehmen
+                </div>
+            </div>
+        </div>
+
+        <!-- Folie 11-14: Förderantrag Präsentation -->
+        <div class="slide pptx-integrated">
+            <h2>📋 Planung</h2>
+            <div class="pptx-content">
+                <img src="pptx_content/images/slide_1_img_2.png" alt="Folie 1 Grafik" class="pdf-image" style="max-width: 80%; margin: 20px auto; display: block;">
+            </div>
+        </div>
+
+        <div class="slide pptx-integrated">
+            <h2>📑 Bestandsituation LA OLA</h2>
+            <div class="pptx-content">
+                <ul class="pptx-text-list">
+                    <li>Bestandsituation Laola
+Schwimmerbereich mit Schwimmerbecken und Nichtschwimmerbecken  (Baujahr ca. 1973)
+Teile der Schwimmhalle wurden schon saniert, sind nun aber wieder sanierungsbedürftig:
+Edelstahlbecken (rostig zur Seite Technik, Rinne schadhaft)
+Beckenumgänge Fliesen
+Abluftkanäle Lüftung im Beckenumgang tlw. durchgerostet
+Übergänge zu Freizeitbereich nicht barrierefrei
+Flachdach über Schwimmhalle dringend sanierungsbedürftig
+
+Freizeitbereich  mit Wellenbecken, 2 Kinderplanschbecken, Riesenrutsche (Baujahr ca. 1992)
+Fast alle Bereiche in der Schwimmhalle sind noch im Originalzustand und müssen vorallem  das Wellenbecken dringend saniert werden:
+Rückbau der Riesenrutsche (energetische Sanierung zu aufwändig, Bausubstanz schwierig
+Glaspyramide Rückbau – Thermisch schwierig, wird kaum genutzt
+Die Beiden Planschbecken sind an verschiedenen Bereich der Freizeithalle angedockt – ungünstig für die Aufsicht, wenig attraktiv – beide Bereich nur für ganz kleine Kinder, nicht barrierfrei erreichbar
+Dach an den Übergängen zu den Glasdächern an vielen Stellen undicht, Dachaufbau abgängig
+
+Technik
+Aufgrund von Platzproblemen im Untergeschoss und man bei einer Sanierung der Badewassertechnik vor über 15 Jahren keinen Anbau machen wollte wurde eine Ultrafiltration im bestehende UG eingebaut. 
+Verschiedene Standorte der Technik Ultrafiltration schwierig – Ultrafiltration müsste saniert werden, aber sehr aufwendig in Bedienung und Wartung (durch heutige Personalsituation noch schwieriger)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="slide pptx-integrated">
+            <h2>📑 Sanierungsmaßnahmen, Planung</h2>
+            <div class="pptx-content">
+                <img src="pptx_content/images/slide_3_img_3.jpg" alt="Folie 3 Grafik" class="pdf-image" style="max-width: 80%; margin: 20px auto; display: block;">
+                <ul class="pptx-text-list">
+                </ul>
+            </div>
+        </div>
+
+        <div class="slide pptx-integrated">
+            <h2>📑 Sanierungsmaßnahmen, Planung</h2>
+            <div class="pptx-content">
+                <ul class="pptx-text-list">
+                    <li>Teil 1: Schwimmhalle – Sanierung und Anbauten
+Sanierung Schwimmhalle.
+Umstellung der Badewassertechnik von Ultrafiltration auf Standardverfahren Mehrschichtfiltration (über Sand und Kohle) wegen einfacher Bedienung und Wartung. Dazu neue Technikräumlichkeiten erforderlich Anbau neben Schwimmhalle notwendig dafür.
+<strong>Beheizung mit Fernwärme (Umstellung von Gas auf Fernwärme)</strong>
+<strong>PV- und PVT- Anlage zur Stromversorgung und teilweiser Wärmeversorgung auf den Dächern </strong>
+Anbau zusätzliches Lehrschwimmbecken für Schulen, Vereine.</li>
+                    <li>Teil 2: Freizeitbereich 
+Abbruch Glas-Pyramide (undicht, energetische schwierig, Temperaturen kaum regelbar, wenig genutzt)			
+Abbruch Großrutsche Sanierung zu aufwendig, energetisch schwierig
+Sanierung / Umbau des Wellenbeckens zum Kombibecken mit Gegenstromanlage und Kinderrutsche (Kompensation zur Großrutsche), dadurch ist das Kombibecken auch für Schwimmer in den Zwischenzeiten nutzbar	
+Neubau Kinderplanschbecken mit kindgerechten Spieleinrichtungen
+Neubau Wasserspiellandschaft Spraypark für mittlere Kinder als Ersatz für die Großrutsche
+Neue Gestaltung Beckenumgangslandschaft mit Rampen zur Erweiterung der Barrierefreiheit		</li>
+                    <li>Teil 3: Sanierung Sauna</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Folie: Warum oberste Priorität? (ans Ende verschoben) -->
+        <div class="slide">
+            <h2>❗ Warum oberste Priorität?</h2>
+            
+            <div class="content-section">
+                <ul class="importance-list">
+                    <li><strong>Daseinsvorsorge:</strong> 240.000 Bürgerinnen und Bürger nutzen die Einrichtung jährlich</li>
+                    <li><strong>Bildung:</strong> Unverzichtbar für 30.000 Schülerinnen und Schüler</li>
+                    <li><strong>Sport:</strong> Trainingsgrundlage für 30.000 Vereinsmitglieder</li>
+                    <li><strong>Gesundheit:</strong> Zentrale Rolle für Prävention und Rehabilitation</li>
+                    <li><strong>Wirtschaft:</strong> Standortfaktor und Arbeitgeber</li>
+                    <li><strong>Integration:</strong> Begegnungsstätte für alle gesellschaftlichen Gruppen</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Schlussfolie -->
+        <div class="slide slide-title">
+            <h1>Für unsere Stadt.<br>Für unsere Bürger.</h1>
+            <p class="subtitle" style="margin-top: 30px; font-size: 2em;">
+                Das LA OLA ist mehr als ein Schwimmbad<br>
+                es ist ein Ort für Bildung, Sport und Gemeinschaft.
+            </p>
+            
+            <div class="priority-badge" style="margin-top: 40px; font-size: 2.5em;">
+                OBERSTE PRIORITÄT FÜR LANDAU
+            </div>
+
+            <div class="footer" style="color: white; margin-top: 60px; font-size: 1.2em;">
+                <p>Vielen Dank für Ihre Aufmerksamkeit!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
